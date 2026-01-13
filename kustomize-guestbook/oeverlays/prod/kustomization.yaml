@@ -1,7 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-namespace: guestbook-prod
+namespace: prod
 
 namePrefix: prod-
 
@@ -11,10 +11,6 @@ commonLabels:
 
 bases:
   - ../../base
-
-images:
-  - name: gcr.io/google-samples/gb-frontend:v5
-    newTag: "0.1"
 
 replicas:
   - name: guestbook-ui
